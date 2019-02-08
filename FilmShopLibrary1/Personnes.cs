@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace FilmShopLibrary1
 {
-    public class Personnes
+    public class Personne
     {
 
         private int idPersonne;
@@ -18,7 +18,7 @@ namespace FilmShopLibrary1
         private int taillePersonne;
         private int poidsPersonne;
 
-        public Personnes()
+        public Personne()
         {
         }
 
@@ -67,7 +67,7 @@ namespace FilmShopLibrary1
         public int PoidsPersonne { get => poidsPersonne; set => poidsPersonne = value; }
     }
 
-    public string Presenter(Personnes NouvPerson)
+    public string Presenter(Personne NouvPerson)
     
     {
         String presentation = "Bonjour je m'appelle " + NouvPerson.NomEntier;
