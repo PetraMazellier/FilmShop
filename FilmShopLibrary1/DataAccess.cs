@@ -154,5 +154,88 @@ namespace FilmShopLibrary1
 
         }
 
+        public static List<Film> GetFilmByld(Film ListF)
+            {
+
+            List<Film> resultat = new List<Film>();
+
+            SqlConnection connection = new SqlConnection(SqlConnectionString);
+            connection.Open();
+            SqlCommand selectCommand =
+                new SqlCommand
+                  ("SELECT Titre, Realisateur, DateSortie, Resume, Genre, Duree " +
+                "FROM Film  WHERE Titre =  @titre ORDER BY Titre ", connection);
+            selectCommand.Parameters.AddWithValue("@titre", ListF.Titre);
+            SqlDataReader dataReader = selectCommand.ExecuteReader();
+          
+            while (dataReader.Read())
+            {
+                #region .Liste tous les film..             
+                Film loginCourant = new Film();
+                loginCourant.Titre = (string)dataReader["Titre"];
+                loginCourant.Realisateur = (string)dataReader["Realisateur"];
+                loginCourant.DateSortie = (DateTime)dataReader["DateSortie"];
+                loginCourant.Resume = (string)dataReader["Resume"];
+                loginCourant.Genre = (string)dataReader["Genre"];
+                loginCourant.Duree = (int)dataReader["Duree"];
+
+
+                #endregion
+                resultat.Add(loginCourant);
+
+
+            }
+            connection.Close();
+
+            return resultat;
+        }
+
+        // select pour voir si l'adresse émail existe dans la base de donnéé
+        public static List<Personne> GetPersonneByld(Personne ListP)
+
+        {
+
+
+            List<Personne> resultat = new List<Personne>();
+
+            SqlConnection connection = new SqlConnection(SqlConnectionString);
+            connection.Open();
+            SqlCommand selectCommand =
+                new SqlCommand
+                  ("SELECT NomPersonne, PrenomPersonne, DateNaissance, AdressePersonne, VillePersonne, CPPersonne, TaillePersonne," +
+                  " PoidsPersonne " +
+                "FROM Personne WHERE NomPersonne=  @nomPersonne ORDER BY NomPersonne ", connection);
+            selectCommand.Parameters.AddWithValue("@nomPersonne", ListP.NomPersonne);
+
+            SqlDataReader dataReader = selectCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                #region .Liste tous les personne.             
+                Personne loginCourant = new Personne();
+
+                loginCourant.NomPersonne = (string)dataReader["NomPersonne"];
+                loginCourant.PrenomPersonne = (string)dataReader["PrenomPersonne"];
+                loginCourant.NomPersonne = (string)dataReader["NomPersonne"];
+                loginCourant.DateNaissance = (DateTime)dataReader["DateNaissance"];
+                loginCourant.VillePersonne = (string)dataReader["VillePersonne"];
+                loginCourant.CPPersonne = (string)dataReader["CPPersonne"];
+                loginCourant.TaillePersonne = (int)dataReader["TaillePersonne"];
+
+
+                #endregion
+                resultat.Add(loginCourant);
+
+
+            }
+            connection.Close();
+
+            return resultat;
+
+        }
+
     }
-}
+
+   
+
+            }
+

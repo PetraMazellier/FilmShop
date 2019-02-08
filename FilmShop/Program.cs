@@ -20,8 +20,10 @@ namespace FilmShop
             List<Personne> personneTrouve = DataAccess.GetAllPersonne();
             ShowListFilm();
             ShowListPersonne();
-           
-              return;
+            ShowListFilm1();
+            ShowListPersonne1();
+
+            return;
        
                           
 
@@ -65,6 +67,75 @@ namespace FilmShop
             Console.Clear();
             List<Personne> personneTrouve = DataAccess.GetAllPersonne();
            
+
+            Console.WriteLine("\tNous avons trouvé {0} personne:", personneTrouve.Count);
+
+            foreach (var personnecourant in personneTrouve)
+            {
+                Console.Write(" nom entier   ");
+                Console.Write(personnecourant.NomEntier);
+                Console.Write(" date naissance   ");
+                Console.Write(personnecourant.DateNaissance);
+                Console.Write(" code postale   ");
+                Console.Write(personnecourant.CPPersonne);
+                Console.Write(" ville   ");
+                Console.Write(personnecourant.VillePersonne);
+                Console.Write(" taille   ");
+                Console.Write(personnecourant.TaillePersonne);
+
+
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ReadKey(true);
+
+        }
+
+        private static void ShowListFilm1()
+        {
+            Console.Clear();
+            Film FCree = new Film();
+
+            FCree.Titre = "the dark";
+            List<Film> filmTrouve = DataAccess.GetFilmByld(FCree);
+
+            Console.WriteLine("\tNous avons trouvé {0} film :", filmTrouve.Count);
+
+            foreach (var filmcourant in filmTrouve)
+            {
+
+                Console.Write(" titre   ");
+
+                Console.Write(filmcourant.Titre);
+                Console.Write(" realisateur   ");
+                Console.Write(filmcourant.Realisateur);
+                Console.Write(" datesortie   ");
+                Console.Write(filmcourant.DateSortie);
+                Console.Write(" resume   ");
+                Console.Write(filmcourant.Resume);
+                Console.Write(" genre   ");
+                Console.Write(filmcourant.Genre);
+                Console.Write(" duree   ");
+                Console.Write(filmcourant.Duree);
+
+
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ReadKey(true);
+
+        }
+
+        private static void ShowListPersonne1()
+        {
+            Console.Clear();
+            Personne PCree = new Personne();
+
+            PCree.NomPersonne = "Mazellier";
+            PCree.PrenomPersonne = "Petra";
+            List<Personne> filmTrouve = DataAccess.GetPersonneByld(PCree);
+            List<Personne> personneTrouve = DataAccess.GetAllPersonne();
+
 
             Console.WriteLine("\tNous avons trouvé {0} personne:", personneTrouve.Count);
 
