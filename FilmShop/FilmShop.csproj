@@ -59,10 +59,6 @@
       <Project>{935c44a7-1773-4efb-943a-db4ed4bdc9dd}</Project>
       <Name>FilmShopLibrary1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UnitTestFilmt1\UnitTestFilmt1.csproj">
-      <Project>{fbc1be1d-172f-4f11-9eed-18efdc5c3571}</Project>
-      <Name>UnitTestFilmt1</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

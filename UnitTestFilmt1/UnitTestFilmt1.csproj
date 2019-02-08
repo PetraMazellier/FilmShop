@@ -13,4 +13,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FilmShopLibrary1\FilmShopLibrary1.csproj" />
+  </ItemGroup>
+
 </Project>
