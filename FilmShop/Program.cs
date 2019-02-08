@@ -21,11 +21,9 @@ namespace FilmShop
             ShowListFilm();
             ShowListPersonne();
            
-                            return;
+              return;
        
-            
-           
-           
+                          
 
 
         }
@@ -44,7 +42,7 @@ namespace FilmShop
                
                 Console.Write(filmcourant.Titre);
                 Console.Write(" realisateur   ");
-                Console.Write(filmcourant.Realisateur;
+                Console.Write(filmcourant.Realisateur);
                 Console.Write(" datesortie   ");
                 Console.Write(filmcourant.DateSortie);
                 Console.Write(" resume   ");
@@ -66,37 +64,23 @@ namespace FilmShop
         {
             Console.Clear();
             List<Personne> personneTrouve = DataAccess.GetAllPersonne();
-            loginCourant.NomPersonne = (string)dataReader["NomPersonne"];
-            loginCourant.PrenomPersonne = (string)dataReader["PrenomPersonne"];
-            loginCourant.NomPersonne = (string)dataReader["NomPersonne"];
-            loginCourant.DateNaissance = (DateTime)dataReader["DateNaissance"];
-            loginCourant.VillePersonne = (string)dataReader["VillePersonne"];
-            loginCourant.CPPersonne = (string)dataReader["CPPersonne"];
-            loginCourant.TaillePersonne = (int)dataReader["TaillePersonne"];
+           
 
+            Console.WriteLine("\tNous avons trouvé {0} personne:", personneTrouve.Count);
 
-            Console.WriteLine("\tNous avons trouvé {0} film :", filmTrouve.Count);
-
-            foreach (var filmcourant in filmtrouve)
+            foreach (var personnecourant in personneTrouve)
             {
+                Console.Write(" nom entier   ");
+                Console.Write(personnecourant.NomEntier);
+                Console.Write(" date naissance   ");
+                Console.Write(personnecourant.DateNaissance);
+                Console.Write(" code postale   ");
+                Console.Write(personnecourant.CPPersonne);
+                Console.Write(" ville   ");
+                Console.Write(personnecourant.VillePersonne);
+                Console.Write(" taille   ");
+                Console.Write(personnecourant.TaillePersonne);
 
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("\n\n\tNom trouvé : ");
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write(filmcourant.NomEntier);
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("  avec son numéro téléphone : ");
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write(filmcourant.TelephoneIdentification);
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write(" \n\tet son adresse émail   ");
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write(filmcourant.MailIdentification);
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("  et il a le type   ");
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write(filmcourant.NomType);
-                Console.ForegroundColor = ConsoleColor.Blue;
 
             }
             Console.WriteLine();

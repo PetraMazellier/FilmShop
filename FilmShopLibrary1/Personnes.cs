@@ -57,8 +57,22 @@ namespace FilmShopLibrary1
         
 
         public int IdPersonne { get => idPersonne; set => idPersonne = value; }
-        public string NomPersonne { get => nomPersonne; set => nomPersonne = value; }
-        public string PrenomPersonne { get => prenomPersonne; set => prenomPersonne = value; }
+        public string NomPersonne {
+            get
+            {
+                nomPersonne = nomPersonne.ToUpper();
+
+                return nomPersonne;
+            }
+            set => nomPersonne = value; }
+        public string PrenomPersonne {
+                get
+            {
+                prenomPersonne = prenomPersonne.ToUpper();
+
+                return prenomPersonne;
+            }
+            set => prenomPersonne = value; }
         public DateTime DateNaissance { get => dateNaissance; set => dateNaissance = value; }
         public string AdressePersonne { get => adressePersonne; set => adressePersonne = value; }
         public string VillePersonne { get => villePersonne; set => villePersonne = value; }
@@ -67,11 +81,11 @@ namespace FilmShopLibrary1
         public int PoidsPersonne { get => poidsPersonne; set => poidsPersonne = value; }
     }
 
-    public string Presenter(Personne NouvPerson)
+  /*  public string Presenter(Personne NouvPerson)
     
     {
         String presentation = "Bonjour je m'appelle " + NouvPerson.NomEntier;
 
         return presentation;
-    }
+    }*/
 }
