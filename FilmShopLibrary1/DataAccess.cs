@@ -75,7 +75,7 @@ namespace FilmShopLibrary1
         }
         #endregion
         // select pour voir si l'adresse émail existe dans la base de donnéé
-        public static List<Film> GetAllFilms(Film Recupf)
+        public static List<Film> GetAllFilms()
 
         {
            
@@ -113,7 +113,7 @@ namespace FilmShopLibrary1
             
         }
         // select pour voir si l'adresse émail existe dans la base de donnéé
-        public static List<Film> GetAllPersonne(Personne RecupP)
+        public static List<Personne> GetAllPersonne()
 
         {
 

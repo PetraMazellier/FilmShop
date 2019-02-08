@@ -16,6 +16,8 @@ namespace FilmShop
 
             ShowAddFilm();
             ShowAddPersonne();
+            List<Film> filmTrouve =DataAccess.GetAllFilms();
+            List<Personne> personneTrouve = DataAccess.GetAllPersonne();
             ShowListFilm();
             ShowListPersonne();
            
